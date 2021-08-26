@@ -1,27 +1,9 @@
-
 % Thomas Clay Kynor - LaTex Resume
 % Run on Overleaf and inspired by FortySecondsCV by René Wirnata <rene.wirnata@pandascience.net>
 %
 
 \documentclass[
 	a4paper,
-	% showframes,
-	% vline=2.2em,
-	% maincolor=cvgreen,
-	% sidecolor=gray!50,
-	% sectioncolor=red,
-	% subsectioncolor=orange,
-	% itemtextcolor=black!80,
-	% sidebarwidth=0.4\paperwidth,
-	% topbottommargin=0.03\paperheight,
-	% leftrightmargin=20pt,
-	% profilepicsize=4.5cm,
-	% profilepicborderwidth=3.5pt,
-	% profilepicstyle=profilecircle,
-	% profilepiczoom=1.0,
-	% profilepicxshift=0mm,
-	% profilepicyshift=0mm,
-	% profilepicrounding=1.0cm,
 ]{fortysecondscv}
 
 % improve word spacing and hyphenation
@@ -64,16 +46,10 @@
 	bubble fill opacity = 0.8,
 }
 
-
-%-------------------------------------------------------------------------------
-%                            PERSONAL INFORMATION
-%-------------------------------------------------------------------------------
-%% mandatory information
-% your name
+% name
 \cvname{Thomas Clay \\ Kynor}
 
-%% optional information
-% profile picture
+%% optional profile picture
 %\cvprofilepic{pics/profile.png}
 
 
@@ -86,14 +62,8 @@
 % personal website
 \cvsite{https://www.linkedin.com/in/thomas-clay-kynor/}
 
-
-%---------------------------------------------------%                              SIDEBAR 1st PAGE
-%---------------------------------------------------
-
 % add more profile sections to sidebar on first page
 \addtofrontsidebar{
-	% include gosquare national flags from https://github.com/gosquared/flags;
-	% naming according to ISO 3166-1 alpha-2 country codes
 	\graphicspath{{pics/flags/}}
 
 	% social network accounts incl. proper hyperlinks
@@ -118,7 +88,7 @@
 	\begin{figure}\centering
 		\smartdiagram[bubble diagram]{
 			\textcolor{white}{\textbf{Programming}} \\
-			\textcolor{white}{\textbf{Languages}}, % center bubble
+			\textcolor{white}{\textbf{Languages}},
 			\textcolor{black!90}{Python},
 			\textcolor{black!90}{C++},
 			\textcolor{black!90}{HTML \& LaTex},
@@ -137,10 +107,6 @@
 		\pointskill{\flag{PngItem_4823929.png}}{Spanish}{4}
 }
 
-
-%-------------------------------------------------------------------------------
-%                         TABLE ENTRIES RIGHT COLUMN
-%-------------------------------------------------------------------------------
 \begin{document}
 
 \makefrontsidebar
@@ -165,7 +131,6 @@
 	   \end{itemize}
 	  }
 \end{cvtable}
-
 
 \cvsection{Education}
 \begin{cvtable}[1.5]
