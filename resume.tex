@@ -1,0 +1,205 @@
+
+% Thomas Clay Kynor - LaTex Resume
+% Run on Overleaf and inspired by FortySecondsCV by René Wirnata <rene.wirnata@pandascience.net>
+%
+
+\documentclass[
+	a4paper,
+	% showframes,
+	% vline=2.2em,
+	% maincolor=cvgreen,
+	% sidecolor=gray!50,
+	% sectioncolor=red,
+	% subsectioncolor=orange,
+	% itemtextcolor=black!80,
+	% sidebarwidth=0.4\paperwidth,
+	% topbottommargin=0.03\paperheight,
+	% leftrightmargin=20pt,
+	% profilepicsize=4.5cm,
+	% profilepicborderwidth=3.5pt,
+	% profilepicstyle=profilecircle,
+	% profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+]{fortysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+%	\usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {maincolor!10, maincolor!40,
+	maincolor!20, maincolor!60, maincolor!35},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{Thomas Clay \\ Kynor}
+
+%% optional information
+% profile picture
+%\cvprofilepic{pics/profile.png}
+
+
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{48 Lent Rd. Sharon VT, 05065}
+% phone number
+\cvphone{+1 (802) 359-3557}
+% email address
+\cvmail{kynor.shop@gmail.com}
+% personal website
+\cvsite{https://www.linkedin.com/in/thomas-clay-kynor/}
+
+
+%---------------------------------------------------%                              SIDEBAR 1st PAGE
+%---------------------------------------------------
+
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/}}
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Links}
+		\begin{icontable}{2.5em}{1em}
+			\social{\aiOverleafSquare}
+				{https://de.overleaf.com/latex/templates/forty-seconds-cv/pztcktmyngsk}
+				{Overleaf Template Link}
+			\social{\faGithub}
+				{https://github.com/PandaScience/FortySecondsCV}
+				{Github Project Page Link}
+		\end{icontable}
+
+    \profilesection{Skills}
+	\begin{sidebarminipage}
+		\chartlabel{Numpy}
+		\chartlabel{Matplotlib}
+		\chartlabel{Seaborn}
+	    \chartlabel{Plotly}
+	    \chartlabel{TensorFlow}
+	\end{sidebarminipage}
+	\begin{figure}\centering
+		\smartdiagram[bubble diagram]{
+			\textcolor{white}{\textbf{Programming}} \\
+			\textcolor{white}{\textbf{Languages}}, % center bubble
+			\textcolor{black!90}{Python},
+			\textcolor{black!90}{C++},
+			\textcolor{black!90}{HTML \& LaTex},
+			\textcolor{black!90}{JavaScript},
+			\textcolor{black!90}{CSS}
+		}
+	\end{figure}
+
+	\profilesection{Interests}
+		\skill{\faBicycle}{Cycling}
+		\skill{\faMusic}{Choral Work and Theater}
+		\skill{\faRecycle}{Environmental Sustainability}
+
+	\profilesection{Languages}
+		\pointskill{\flag{GB.png}}{English}{5}
+		\pointskill{\flag{PngItem_4823929.png}}{Spanish}{4}
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{Experience}
+\begin{cvtable}[2]
+	\cvitem{May 2021 - Present}{Passparto \hspace{1em} {\normalfont \emph{Software Development Engineer}}}{Tel Aviv-Yafo, Israel} {
+	\begin{itemize}
+	\addtolength\itemsep{-6mm}
+        \item Created scale-able vector graphic (SVG) editor allowing for automatic design and content creation. \\
+        \item Designed AI framework taking client's information and outputting accurate design styles, fonts and background images for aforementioned designs. \\
+        \item Reached out to possible investors and helped facilitate the creation of company's promotional video.
+	   \end{itemize}
+	  }
+	\cvitem{May 2020 - Sep 2020}{Hodgdon Yachts \hspace{1em} {\normalfont \emph{Waterfront Attendant}}}{Southport, ME}{
+	\begin{itemize}
+	\addtolength\itemsep{-6mm}
+        \item Led boat deliveries to customers, ran fuel dock, and directed boat launches. \\
+        \item Safely towed large boats to and from marina for maintenance. \\
+        \item Managed Hodgdon's entire Boothbay location once a week. \\
+        \item Secured boats to docks with mooring lines and cast off lines to enable departure.
+	   \end{itemize}
+	  }
+\end{cvtable}
+
+
+\cvsection{Education}
+\begin{cvtable}[1.5]
+	\cvitem{2020 -- Present}{Tufts University}{Medford, MA}
+		{Bachelor of Science in Computer Science (Expected Grad. May 2024)\\
+		Current GPA: 3.89 \\ 
+		Dean's List Fall 2020, Dean's List Spring 2020 \\
+		\emph{Relevant Coursework:}
+	    \begin{itemize}
+	    \addtolength\itemsep{-6mm}
+            \item Computer Science 11, Computer Science 15 (C++, Data Structures) \\
+            \item Graduate Level Data Science Course DATA201A (Python, Numpy, Matplotlib, Seaborn, Plotly, TensorFlow) \\
+            \item Multivariable Calculus, Discrete Mathematics (LaTex - Whole Resume Written in LaTex)
+	    \end{itemize}
+		}
+	\cvitem{2019 -- 2020}{Dartmouth College}{Hanover, NH}
+		{Took Computer Science course in High School - GPA: 4.0 \\
+		(Python, games/animation, recursion)
+		}
+\end{cvtable}
+\\
+
+\cvsection{Civic Involvement}
+\begin{cvtable}
+    \cvpubitem{TAMID Group}{Tufts University Chapter}{ Fellowship Member \\
+   Data Science Leader of Education - Machine Learning Focus \\
+   Co-Chair Data Science Board of Operations}{2020 -- Present}
+	\cvpubitem{Positive Tracks Community Service Organization}{Environmental Sustainability Advocate}{Leader of Positive Tracks Community Service March Intensive Course and organized a school-wide event focused on altering Hanover High School’s environmental footprint. (756 Participants)}{2018 -- 2020}
+	\cvpubitem{Hanover High School Council}{Elected Leadership Positions:}{
+	- Assistant Moderator (1 year)\\
+	- Chair of Administrative Committee (2 years)\\
+	- Chair of Community Service Ad Hoc Committee (2 years)}{2016 -- 2020}
+	\vspace{2em}
+\end{cvtable}
+\vspace{3em} \emph{References Upon Request}
+
+\end{document}
